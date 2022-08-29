@@ -17,9 +17,9 @@ import java.util.Set;
 
 public class Join {
     public static void setSkin(Player player) {
-        String uuid = Utils.returnStream("https://api.mojang.com/users/profiles/minecraft/"
+        String uuid = Utils.returnJsonObject("https://api.mojang.com/users/profiles/minecraft/"
                 + player.getUsername()).get("id").toString();
-        JSONObject skin = Utils.returnStream("https://sessionserver.mojang.com/session/minecraft/profile/" + uuid
+        JSONObject skin = Utils.returnJsonObject("https://sessionserver.mojang.com/session/minecraft/profile/" + uuid
                 + "?unsigned=false");
         JSONArray properties = (JSONArray) skin.get("properties");
         String textureValue = null;

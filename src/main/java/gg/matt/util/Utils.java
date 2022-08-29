@@ -10,7 +10,7 @@ import java.net.URL;
 import java.util.Scanner;
 
 public class Utils {
-    public static JSONObject returnStream(String string) {
+    public static JSONObject returnJsonObject(String string) {
         URL url;
         try {
             url = new URL(string);

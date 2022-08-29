@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id "com.github.johnrengelman.shadow" version "6.1.0"
+}
+
+group 'gg.matt'
+version '1.0'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'com.github.Minestom:Minestom:c2db82a934'
+    implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+    implementation 'de.articdive:jnoise:3.0.2'
+}
+
+build {
+    dependsOn(shadowJar)
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'gg.matt.Main',
+                "Multi-Release": true
+    }
+}
